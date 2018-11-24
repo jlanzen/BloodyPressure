@@ -56,6 +56,10 @@
         "source": "/Users/laj5be4/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/dad4185ed5d37c7463f8c723f2e8fc4a/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
+        "merged": "/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/res/merged/debug/drawable_material_save_outline.png.flat",
+        "source": "/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/src/main/res/drawable/material_save_outline.png"
+    },
+    {
         "merged": "/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
         "source": "/Users/laj5be4/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/dad4185ed5d37c7463f8c723f2e8fc4a/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
     },

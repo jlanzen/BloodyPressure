@@ -621,6 +621,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable material_save_outline
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -706,6 +707,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageButton
 id info
 id invisible
 id italic
@@ -829,6 +831,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
+string _0
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -859,8 +862,12 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string diastolic
+string pulse
+string savebutton
 string search_menu_title
 string status_bar_notification_info_overflow
+string systolic
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
