@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/Users/laj5be4/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/dad4185ed5d37c7463f8c723f2e8fc4a/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}
