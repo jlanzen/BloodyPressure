@@ -621,7 +621,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable material_save_outline
+drawable material_save_outline_36x36
+drawable material_save_outline_48x48
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -685,12 +686,10 @@ id custom
 id customPanel
 id decor_content_parent
 id default_activity_button
+id diastolicValue
 id dimensions
 id direct
 id disableHome
-id editText3
-id editText4
-id editText5
 id edit_query
 id end
 id expand_activities_button
@@ -707,7 +706,6 @@ id icon
 id icon_group
 id ifRoom
 id image
-id imageButton
 id info
 id invisible
 id italic
@@ -731,10 +729,12 @@ id parentPanel
 id percent
 id progress_circular
 id progress_horizontal
+id pulseValue
 id radio
 id right
 id right_icon
 id right_side
+id saveBloodPressure
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -765,6 +765,7 @@ id standard
 id start
 id submenuarrow
 id submit_area
+id systolicValue
 id tabMode
 id tag_transition_group
 id text
