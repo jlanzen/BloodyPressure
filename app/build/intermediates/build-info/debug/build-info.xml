@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1543179403247"
+    timestamp="1543302940901"
     token="4845968383720558431"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -23,6 +23,9 @@
         name="verifier"
         duration="0" />
 
+    <artifact
+        location="/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
     <artifact
         location="/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
         type="SPLIT" />
@@ -59,14 +62,14 @@
     <artifact
         location="/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
         type="SPLIT" />
-    <artifact
-        location="/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1543179403247"
+        timestamp="1543302940901"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
@@ -103,9 +106,6 @@
         <artifact
             location="/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
-        <artifact
-            location="/Users/laj5be4/BORG/04_Projekte/Private/Android/BloodyPressure/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>
