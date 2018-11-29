@@ -1,5 +1,6 @@
 package com.joe.kotlinfromthescratch
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -34,18 +35,15 @@ class MainActivity : AppCompatActivity() {
             val dys : Int = (findViewById(R.id.diastolicValue) as EditText).text.toString().toInt()
             val pul : Int = (findViewById(R.id.pulseValue) as EditText).text.toString().toInt()
 
-            System.out.println(sys.toString()+dys.toString()+pul.toString())
-
             doAsync {
-                //db?.bloodPressureDao()?.insertAll(BloodPressure(null,sys,dys,pul,null))
                 db?.bloodPressureDao()?.insertAll(BloodPressure(sys, dys, pul))
 
                 val allItems = db?.bloodPressureDao()?.getAllByTimestamp()
-
-                System.out.println(sys.toString()+dys.toString()+pul.toString())
             }
 
-            System.out.println(sys.toString()+dys.toString()+pul.toString())
+            val intent = Intent(this, DashboardActivity::class.java)
+            startActivity(intent)
+
         }
 
 
