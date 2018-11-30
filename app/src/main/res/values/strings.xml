@@ -5,4 +5,5 @@
     <string name="diastolic">Diastolic</string>
     <string name="pulse">Pulse</string>
     <string name="savebutton">SaveButton</string>
+    <string name="text_favorites">Foo1</string>
 </resources>
