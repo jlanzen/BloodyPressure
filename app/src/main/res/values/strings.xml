@@ -6,4 +6,8 @@
     <string name="pulse">Pulse</string>
     <string name="savebutton">SaveButton</string>
     <string name="text_favorites">Foo1</string>
+    <string name="add">add</string>
+    <string name="list">list</string>
+    <string name="graph">graph</string>
+    <string name="settings">settings</string>
 </resources>
