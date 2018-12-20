@@ -2,25 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_add"
+        android:id="@+id/menu_action_add"
         android:enabled="true"
         android:icon="@drawable/material_add_48"
         android:title="@string/add"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_list"
+        android:id="@+id/menu_action_list"
         android:enabled="true"
         android:icon="@drawable/material_menu_48"
         android:title="@string/list"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_graph"
+        android:id="@+id/menu_action_graph"
         android:enabled="true"
         android:icon="@drawable/material_chart_48"
         android:title="@string/graph"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/menu_action_settings"
         android:enabled="true"
         android:icon="@drawable/material_settings_48"
         android:title="@string/settings"

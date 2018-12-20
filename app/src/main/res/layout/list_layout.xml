@@ -9,4 +9,12 @@
 
     <include layout="@layout/bottom_navigation_layout"/>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List_Layout"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="28dp" />
+
 </android.support.constraint.ConstraintLayout>
