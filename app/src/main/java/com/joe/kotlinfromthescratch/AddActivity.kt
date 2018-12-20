@@ -17,7 +17,7 @@ class AddActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.save_pressuer)
+        setContentView(R.layout.add_layout)
 
         db = BloodyDatabase.getAppDataBase(context = this)
         bloodPressureDao = db?.bloodPressureDao()
