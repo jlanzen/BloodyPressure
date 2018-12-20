@@ -10,7 +10,7 @@ import bloodyPressure.BloodPressureDao
 import bloodyPressure.BloodyDatabase
 import org.jetbrains.anko.doAsync
 
-class DashboardActivity : AppCompatActivity() {
+class AddActivity : AppCompatActivity() {
 
     private var db: BloodyDatabase? = null
     private var bloodPressureDao: BloodPressureDao? = null
@@ -40,7 +40,7 @@ class DashboardActivity : AppCompatActivity() {
                 val allItems = db?.bloodPressureDao()?.getAllByTimestamp()
             }
 
-            val intent = Intent(this, DashboardActivity::class.java)
+            val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
 
         }
