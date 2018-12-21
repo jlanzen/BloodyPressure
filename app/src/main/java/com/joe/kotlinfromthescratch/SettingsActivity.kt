@@ -6,11 +6,11 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 
 
-class MainActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_layout)
+        setContentView(R.layout.settings_layout)
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
@@ -25,16 +25,18 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_action_graph -> {
-                val intent = Intent(this, MainActivity::class.java).apply {}
+                val intent = Intent(this, GraphActivity::class.java).apply {}
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_action_list -> {
-
+                val intent = Intent(this, ListActivity::class.java).apply {}
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_action_settings -> {
-
+                val intent = Intent(this, SettingsActivity::class.java).apply {}
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
         }
