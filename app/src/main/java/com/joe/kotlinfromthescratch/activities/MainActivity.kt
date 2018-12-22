@@ -1,9 +1,10 @@
-package com.joe.kotlinfromthescratch
+package com.joe.kotlinfromthescratch.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.joe.kotlinfromthescratch.R
 
 
 class MainActivity : AppCompatActivity() {

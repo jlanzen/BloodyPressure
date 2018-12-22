@@ -1,23 +1,29 @@
-package com.joe.kotlinfromthescratch
+package com.joe.kotlinfromthescratch.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import com.joe.kotlinfromthescratch.R
+import kotlinx.android.synthetic.main.bottom_navigation_layout.*
 
 
-class GraphActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.graph_layout)
+        setContentView(R.layout.settings_layout)
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
+        bottomNavigation.menu.getItem(3).isChecked = true
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+
+        val menu: Menu = bottom_navigation.menu
+
         when (item.itemId) {
             R.id.menu_action_add -> {
                 val intent = Intent(this, AddActivity::class.java).apply {}
@@ -42,5 +48,6 @@ class GraphActivity : AppCompatActivity() {
         }
         false
     }
+
 
 }

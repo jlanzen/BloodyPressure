@@ -18,26 +18,26 @@
             </intent-filter>
         </activity-->
 
-        <activity android:name=".AddActivity">
+        <activity android:name=".activities.AddActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".GraphActivity">
+        <activity android:name=".activities.GraphActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".ListActivity">
+        <activity android:name=".activities.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".SettingsActivity">
+        <activity android:name=".activities.SettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
