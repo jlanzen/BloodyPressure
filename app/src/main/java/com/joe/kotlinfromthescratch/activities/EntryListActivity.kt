@@ -1,43 +1,38 @@
 package com.joe.kotlinfromthescratch.activities
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
-import bloodyPressure.BloodPressure
-import bloodyPressure.BloodPressureDao
-import bloodyPressure.BloodyDatabase
+import android.widget.LinearLayout
 import com.joe.kotlinfromthescratch.R
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
-import org.jetbrains.anko.doAsync
-import org.json.JSONArray
+import android.widget.TextView
 
 
-
-
-class ListActivity : AppCompatActivity() {
-
-    private var db: BloodyDatabase? = null
-    private var bloodPressureDao: BloodPressureDao? = null
+class EntryListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.list_layout)
+        setContentView(R.layout.adapter_view_layout)
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         bottomNavigation.menu.getItem(1).isChecked = true
-        doAsync {
-            fillTable()
-        }
-    }
 
+        val linearLayout = findViewById<LinearLayout>(R.id.list_layout)
+        val valueTV = TextView(this)
+        valueTV.setTextColor(Color.GRAY)
+        valueTV.text = "hallo hallo"
+        valueTV.id = 5
+        valueTV.layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        linearLayout.addView(valueTV)
 
-    private fun fillTable() {
-            db = BloodyDatabase.getAppDataBase(context = this)
-            bloodPressureDao = db?.bloodPressureDao()
-            val bloodList : ArrayList<BloodPressure>? = bloodPressureDao?.getAllByTimestamp() as ArrayList<BloodPressure>?
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -56,7 +51,7 @@ class ListActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_action_list -> {
-                val intent = Intent(this, ListActivity::class.java).apply {}
+                val intent = Intent(this, EntryListActivity::class.java).apply {}
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
@@ -68,5 +63,7 @@ class ListActivity : AppCompatActivity() {
         }
         false
     }
+
+
 
 }

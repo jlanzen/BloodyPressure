@@ -36,7 +36,7 @@ class GraphActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_action_list -> {
-                val intent = Intent(this, ListActivity::class.java).apply {}
+                val intent = Intent(this, EntryListActivity::class.java).apply {}
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

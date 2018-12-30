@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EntryListActivity"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Timestamp"
+        android:id="@+id/textView_timestamp"
+        android:layout_weight="25"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Systolic"
+        android:id="@+id/textView_systolic"
+        android:layout_weight="25"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Diastolic"
+        android:id="@+id/textView_diastolic"
+        android:layout_weight="25"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Pulse"
+        android:id="@+id/textView_pulse"
+        android:layout_weight="25"
+        />
+
+</LinearLayout>
