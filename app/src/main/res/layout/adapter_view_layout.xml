@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EntryListActivity"
+    tools:context=".activities.EntryListActivity"
     android:orientation="horizontal"
     android:weightSum="100">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Timestamp"
-        android:id="@+id/textView_timestamp"
+        android:text="Created"
+        android:id="@+id/textView_created"
         android:layout_weight="25"
         />
 
