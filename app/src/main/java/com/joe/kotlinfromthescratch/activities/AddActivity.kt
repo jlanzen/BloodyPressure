@@ -40,8 +40,6 @@ class AddActivity : AppCompatActivity() {
 
             doAsync {
                 db?.bloodPressureDao()?.insertAll(BloodPressure(sys, dys, pul))
-
-                val allItems = db?.bloodPressureDao()?.getAllByTimestamp()
             }
 
             val intent = Intent(this, AddActivity::class.java)

@@ -6,13 +6,20 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.widget.ListView
+import bloodyPressure.BloodPressure
+import bloodyPressure.BloodPressureDao
+import bloodyPressure.BloodyDatabase
 import com.joe.kotlinfromthescratch.R
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
 import com.example.laj5be4.testapplication.EntryListAdapter
 import com.joe.kotlinfromthescratch.model.Entry
+import org.jetbrains.anko.doAsync
 
 
 class EntryListActivity : AppCompatActivity() {
+
+    private var db: BloodyDatabase? = null
+    private var bloodPressureDao: BloodPressureDao? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,23 +29,31 @@ class EntryListActivity : AppCompatActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         bottomNavigation.menu.getItem(1).isChecked = true
 
+        db = BloodyDatabase.getAppDataBase(context = this)
+        bloodPressureDao = db?.bloodPressureDao()
+
         val lv : ListView = findViewById(R.id.listview)
 
-        val e1 : Entry = Entry(10000,120, 80, 65)
-        val e2 : Entry = Entry(10000,120, 80, 65)
-        val e3 : Entry = Entry(10000,120, 80, 65)
-        val e4 : Entry = Entry(10000,120, 80, 65)
-        val e5 : Entry = Entry(10000,120, 80, 65)
-
         val entryArrayList : ArrayList<Entry> = ArrayList<Entry>()
-        entryArrayList.add(e1)
-        entryArrayList.add(e2)
-        entryArrayList.add(e3)
-        entryArrayList.add(e4)
-        entryArrayList.add(e5)
+
+
+        doAsync {
+            val allItems = db?.bloodPressureDao()?.getAllByTimestamp()
+
+            if (allItems != null) {
+                for (bp : BloodPressure in allItems){
+                    val e : Entry = Entry(bp.created!!, bp.systolic, bp.diastolic, bp.pulse)
+                    entryArrayList.add(e)
+                }
+            }
+
+
+        }
 
         val entryListAdapter : EntryListAdapter = EntryListAdapter(this, R.layout.adapter_view_layout, entryArrayList)
         lv.adapter = entryListAdapter
+
+
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->

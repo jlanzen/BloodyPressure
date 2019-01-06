@@ -20,12 +20,13 @@ class EntryListAdapter(context: Context, resource: Int, objects: ArrayList<Entry
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        val created : Long? = getItem(position).created
+        val createdDate : String = getItem(position).createdDate
+        val createdTime : String = getItem(position).createdTime
         val systolic : Int = getItem(position).systolic
         val diastolic : Int = getItem(position).diastolic
         val pulse : Int = getItem(position).pulse
 
-        val entry : Entry = Entry(created, systolic, diastolic, pulse)
+        val entry : Entry = Entry(createdDate, createdTime,  systolic, diastolic, pulse)
 
         val inflater : LayoutInflater = LayoutInflater.from(context)
 
@@ -33,12 +34,14 @@ class EntryListAdapter(context: Context, resource: Int, objects: ArrayList<Entry
 
         returnView = inflater.inflate(myResource, parent, false)
 
-        val tvCreated : TextView = returnView.findViewById(R.id.textView_created)
+        val tvCreatedDate : TextView = returnView.findViewById(R.id.textView_created_date)
+        val tvCreatedTime : TextView = returnView.findViewById(R.id.textView_created_time)
         val tvSystolic : TextView = returnView.findViewById(R.id.textView_systolic)
         val tvDiastolic : TextView = returnView.findViewById(R.id.textView_diastolic)
         val tvPulse : TextView = returnView.findViewById(R.id.textView_pulse)
 
-        tvCreated.text = created.toString()
+        tvCreatedDate.text = createdDate
+        tvCreatedTime.text = createdTime
         tvSystolic.text = systolic.toString()
         tvDiastolic.text = diastolic.toString()
         tvPulse.text = pulse.toString()
