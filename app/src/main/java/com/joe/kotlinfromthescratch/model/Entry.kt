@@ -6,15 +6,15 @@ import java.util.*
 class Entry(val createdDate : String, val createdTime : String,  val systolic : Int, val diastolic : Int, val pulse : Int) {
 
     constructor(created : Long,  systolic : Int, diastolic : Int, pulse : Int) :
-            this(calcuateDate(created), calcuateTime(created), systolic, diastolic, pulse)
+            this(calculateDate(created), calculateTime(created), systolic, diastolic, pulse)
 }
 
-fun calcuateDate(created: Long): String {
-    val sdfDate = SimpleDateFormat("MM/dd/yyyy")
+fun calculateDate(created: Long): String {
+    val sdfDate = SimpleDateFormat("dd.MM.yyyy")
     return sdfDate.format(Date(created!!))
 }
 
-fun calcuateTime(created: Long): String {
+fun calculateTime(created: Long): String {
     val sdfTime = SimpleDateFormat("hh:mm")
     return sdfTime.format(Date(created!!))
 }
