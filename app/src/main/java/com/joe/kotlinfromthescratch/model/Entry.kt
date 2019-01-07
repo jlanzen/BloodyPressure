@@ -3,32 +3,19 @@ package com.joe.kotlinfromthescratch.model
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Entry {
+class Entry(val createdDate : String, val createdTime : String,  val systolic : Int, val diastolic : Int, val pulse : Int) {
 
-    var createdDate : String
-    var createdTime : String
-    var systolic : Int
-    var diastolic : Int
-    var pulse : Int
+    constructor(created : Long,  systolic : Int, diastolic : Int, pulse : Int) :
+            this(calcuateDate(created), calcuateTime(created), systolic, diastolic, pulse)
+}
 
-    constructor(created : Long,  systolic : Int, diastolic : Int, pulse : Int) {
-        val sdfDate = SimpleDateFormat("MM/dd/yyyy")
-        val sdfTime = SimpleDateFormat("hh:mm")
-        this.createdDate = sdfDate.format(Date(created!!))
-        this.createdTime = sdfTime.format(Date(created!!))
-        this.systolic = systolic
-        this.diastolic = diastolic
-        this.pulse = pulse
-    }
+fun calcuateDate(created: Long): String {
+    val sdfDate = SimpleDateFormat("MM/dd/yyyy")
+    return sdfDate.format(Date(created!!))
+}
 
-    constructor(createdDate : String, createdTime : String,  systolic : Int, diastolic : Int, pulse : Int) {
-        this.createdDate = createdDate
-        this.createdTime = createdTime
-        this.systolic = systolic
-        this.diastolic = diastolic
-        this.pulse = pulse
-    }
-
-
+fun calcuateTime(created: Long): String {
+    val sdfTime = SimpleDateFormat("hh:mm")
+    return sdfTime.format(Date(created!!))
 }
 
