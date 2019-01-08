@@ -5,8 +5,12 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
+import android.view.View
 import com.joe.kotlinfromthescratch.R
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
+import com.jjoe64.graphview.GraphView
+import com.jjoe64.graphview.series.DataPoint
+import com.jjoe64.graphview.series.LineGraphSeries
 
 
 class GraphActivity : AppCompatActivity() {
@@ -14,6 +18,18 @@ class GraphActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.graph_layout)
+
+        val graph = findViewById<View>(R.id.graph) as GraphView
+        val series = LineGraphSeries(
+            arrayOf<DataPoint>(
+                DataPoint(0.0, 1.0),
+                DataPoint(1.0, 5.0),
+                DataPoint(2.0, 3.0),
+                DataPoint(3.0, 2.0),
+                DataPoint(4.0, 6.0)
+            )
+        )
+        graph.addSeries(series)
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
