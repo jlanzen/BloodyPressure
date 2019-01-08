@@ -1,60 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tableLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.EntryListActivity"
-    android:orientation="horizontal"
-    android:weightSum="100">
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
 
-    <LinearLayout
+    <TableRow
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_weight="25"
-        android:orientation="vertical"
-        android:weightSum="50">
+        android:layout_margin="10dp">
+
+        <TableLayout>
+            <TableRow>
+                <TextView
+                    android:id="@+id/textView_created_date"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Created_Date" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/textView_created_time"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Created_Tate" />
+            </TableRow>
+        </TableLayout>
 
         <TextView
-            android:id="@+id/textView_created_date"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView_systolic"
             android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:text="Created_Date"
-            android:textAlignment="viewStart" />
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:text="Systolic"
+            />
 
         <TextView
-            android:id="@+id/textView_created_time"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView_diastolic"
             android:layout_height="wrap_content"
-            android:layout_weight="25"
-            android:text="Created_Tate"
-            android:textAlignment="viewStart" />
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:text="Diastolic"
+            />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView_pulse"
+            android:layout_height="wrap_content"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:text="Pulse"
+            />
 
+    </TableRow>
 
-    <TextView
-        android:id="@+id/textView_systolic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="25"
-        android:text="Systolic" />
-
-    <TextView
-        android:id="@+id/textView_diastolic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="25"
-        android:text="Diastolic"
-        android:textAlignment="viewStart" />
-
-    <TextView
-        android:id="@+id/textView_pulse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="25"
-        android:text="Pulse"
-        android:textAlignment="viewStart" />
-
-</LinearLayout>
+</TableLayout>

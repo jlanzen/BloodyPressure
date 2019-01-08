@@ -50,7 +50,7 @@ class EntryListActivity : AppCompatActivity() {
 
         }
 
-        val entryListAdapter : EntryListAdapter = EntryListAdapter(this, R.layout.adapter_view_layout, entryArrayList)
+        val entryListAdapter : EntryListAdapter = EntryListAdapter(this, R.layout.adapter_view_table_layout, entryArrayList)
         lv.adapter = entryListAdapter
 
 
