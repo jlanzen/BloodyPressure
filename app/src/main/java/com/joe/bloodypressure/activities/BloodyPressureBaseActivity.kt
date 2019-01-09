@@ -4,10 +4,20 @@ import android.content.Intent
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
+import bloodyPressure.BloodPressureDao
+import bloodyPressure.BloodyDatabase
 import com.joe.bloodypressure.R
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
 
-class BottomNavigationActivity : AppCompatActivity() {
+open class BloodyPressureBaseActivity : AppCompatActivity() {
+
+    protected var db: BloodyDatabase? = null
+    protected var bloodPressureDao: BloodPressureDao? = null
+
+    init {
+        db = BloodyDatabase.getAppDataBase(context = this)
+        bloodPressureDao = db?.bloodPressureDao()
+    }
 
 
     protected val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -37,5 +47,10 @@ class BottomNavigationActivity : AppCompatActivity() {
             }
         }
         false
+    }
+    protected fun setNavigationState(index : Int){
+        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        bottomNavigation.menu.getItem(index).isChecked = true
     }
 }

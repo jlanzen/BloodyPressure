@@ -18,17 +18,13 @@ import com.jjoe64.graphview.series.LineGraphSeries
 import org.jetbrains.anko.doAsync
 
 
-class GraphActivity : AppCompatActivity() {
+class GraphActivity : BloodyPressureBaseActivity() {
 
-    private var db: BloodyDatabase? = null
-    private var bloodPressureDao: BloodPressureDao? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.graph_layout)
-
-        db = BloodyDatabase.getAppDataBase(context = this)
-        bloodPressureDao = db?.bloodPressureDao()
+        setNavigationState(2)
 
         doAsync {
             val allItems = db?.bloodPressureDao()?.getAllByTimestamp()
@@ -61,40 +57,7 @@ class GraphActivity : AppCompatActivity() {
 
         }
 
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        bottomNavigation.menu.getItem(2).isChecked = true
+
     }
-
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-
-        val menu: Menu = bottom_navigation.menu
-
-        when (item.itemId) {
-            R.id.menu_action_add -> {
-                val intent = Intent(this, AddActivity::class.java).apply {}
-                startActivity(intent)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.menu_action_graph -> {
-                val intent = Intent(this, GraphActivity::class.java).apply {}
-                startActivity(intent)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.menu_action_list -> {
-                val intent = Intent(this, EntryListActivity::class.java).apply {}
-                startActivity(intent)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.menu_action_settings -> {
-                val intent = Intent(this, SettingsActivity::class.java).apply {}
-                startActivity(intent)
-                return@OnNavigationItemSelectedListener true
-            }
-        }
-        false
-    }
-
-
 
 }
