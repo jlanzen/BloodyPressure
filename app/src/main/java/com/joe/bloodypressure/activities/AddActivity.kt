@@ -1,58 +1,54 @@
-package com.joe.kotlinfromthescratch.activities
+package com.joe.bloodypressure.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
-import android.widget.ListView
+import android.widget.EditText
+import android.widget.ImageButton
 import bloodyPressure.BloodPressure
 import bloodyPressure.BloodPressureDao
 import bloodyPressure.BloodyDatabase
-import com.joe.kotlinfromthescratch.R
+import com.joe.bloodypressure.R
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
-import com.example.laj5be4.testapplication.EntryListAdapter
-import com.joe.kotlinfromthescratch.model.Entry
 import org.jetbrains.anko.doAsync
 
-
-class EntryListActivity : AppCompatActivity() {
+class AddActivity : AppCompatActivity() {
 
     private var db: BloodyDatabase? = null
     private var bloodPressureDao: BloodPressureDao? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.list_layout)
-
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        bottomNavigation.menu.getItem(1).isChecked = true
+        setContentView(R.layout.add_layout)
 
         db = BloodyDatabase.getAppDataBase(context = this)
         bloodPressureDao = db?.bloodPressureDao()
 
-        val lv : ListView = findViewById(R.id.listview)
 
-        val entryArrayList : ArrayList<Entry> = ArrayList<Entry>()
+        // get reference to button
+        val btn_save_blood_pressure = findViewById(R.id.saveBloodPressure) as ImageButton
 
+        // set on-click listener
+        btn_save_blood_pressure.setOnClickListener {
 
-        doAsync {
-            val allItems = db?.bloodPressureDao()?.getAllByTimestamp()
+            val sys : Int = (findViewById(R.id.systolicValue) as EditText).text.toString().toInt()
+            val dys : Int = (findViewById(R.id.diastolicValue) as EditText).text.toString().toInt()
+            val pul : Int = (findViewById(R.id.pulseValue) as EditText).text.toString().toInt()
 
-            if (allItems != null) {
-                for (bp : BloodPressure in allItems){
-                    val e : Entry = Entry(bp.created!!, bp.systolic, bp.diastolic, bp.pulse)
-                    entryArrayList.add(e)
-                }
+            doAsync {
+                db?.bloodPressureDao()?.insertAll(BloodPressure(sys, dys, pul))
             }
 
+            val intent = Intent(this, AddActivity::class.java)
+            startActivity(intent)
 
         }
 
-        val entryListAdapter : EntryListAdapter = EntryListAdapter(this, R.layout.adapter_view_table_layout, entryArrayList)
-        lv.adapter = entryListAdapter
-
+        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        bottomNavigation.menu.getItem(0).isChecked = true
 
     }
 

@@ -1,4 +1,4 @@
-package com.joe.kotlinfromthescratch.model
+package com.joe.bloodypressure.model
 
 import java.text.SimpleDateFormat
 import java.util.*

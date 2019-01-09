@@ -1,24 +1,19 @@
-package com.joe.kotlinfromthescratch.activities
+package com.joe.bloodypressure.activities
 
 import android.content.Intent
-import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import com.joe.kotlinfromthescratch.R
+import android.view.Menu
+import com.joe.bloodypressure.R
+import kotlinx.android.synthetic.main.bottom_navigation_layout.*
+
+class BottomNavigationActivity : AppCompatActivity() {
 
 
-class MainActivity : AppCompatActivity() {
+    protected val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_layout)
+        val menu: Menu = bottom_navigation.menu
 
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
-    }
-
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.menu_action_add -> {
                 val intent = Intent(this, AddActivity::class.java).apply {}
@@ -26,20 +21,21 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_action_graph -> {
-                val intent = Intent(this, MainActivity::class.java).apply {}
+                val intent = Intent(this, GraphActivity::class.java).apply {}
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_action_list -> {
-
+                val intent = Intent(this, EntryListActivity::class.java).apply {}
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_action_settings -> {
-
+                val intent = Intent(this, SettingsActivity::class.java).apply {}
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
     }
-
 }

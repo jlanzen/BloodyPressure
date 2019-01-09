@@ -1,4 +1,4 @@
-package com.joe.kotlinfromthescratch
+package com.joe.bloodypressure
 
 import org.junit.Test
 

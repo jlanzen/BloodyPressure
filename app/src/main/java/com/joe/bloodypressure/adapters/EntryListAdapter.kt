@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.joe.kotlinfromthescratch.R
-import com.joe.kotlinfromthescratch.model.Entry
+import com.joe.bloodypressure.R
+import com.joe.bloodypressure.model.Entry
 
 class EntryListAdapter(context: Context, resource: Int, objects: ArrayList<Entry>) :
     ArrayAdapter<Entry>(context, resource, objects) {
