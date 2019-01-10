@@ -16,6 +16,7 @@ class AddActivity : BloodyPressureBaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_layout)
         setNavigationState(0)
+        initDB()
 
         // get reference to button
         val btn_save_blood_pressure = findViewById(R.id.saveBloodPressure) as ImageButton

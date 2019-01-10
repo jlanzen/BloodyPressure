@@ -14,7 +14,7 @@ open class BloodyPressureBaseActivity : AppCompatActivity() {
     protected var db: BloodyDatabase? = null
     protected var bloodPressureDao: BloodPressureDao? = null
 
-    init {
+    protected fun initDB(){
         db = BloodyDatabase.getAppDataBase(context = this)
         bloodPressureDao = db?.bloodPressureDao()
     }

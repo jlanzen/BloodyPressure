@@ -25,6 +25,7 @@ class GraphActivity : BloodyPressureBaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.graph_layout)
         setNavigationState(2)
+        initDB()
 
         doAsync {
             val allItems = db?.bloodPressureDao()?.getAllByTimestamp()

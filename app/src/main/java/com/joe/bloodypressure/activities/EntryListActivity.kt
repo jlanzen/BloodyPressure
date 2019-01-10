@@ -17,6 +17,7 @@ class EntryListActivity : BloodyPressureBaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.list_layout)
         setNavigationState(1)
+        initDB()
 
         val lv : ListView = findViewById(R.id.listview)
 

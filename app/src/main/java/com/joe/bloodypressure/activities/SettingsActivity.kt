@@ -15,6 +15,7 @@ class SettingsActivity : BloodyPressureBaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.settings_layout)
         setNavigationState(3)
+        initDB()
 
     }
 
